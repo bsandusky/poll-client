@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import PollsList from './polls_list.jsx'
 
 export default class App extends Component {
 
@@ -23,8 +24,8 @@ export default class App extends Component {
 
   render() {
     return (
-      <div style={{textAlign: 'center'}}>
-        <h1>Hello world!</h1>
+      <div>
+        <PollsList polls={this.state.polls} />
       </div>
     );
   }
