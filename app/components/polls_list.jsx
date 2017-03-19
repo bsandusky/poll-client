@@ -10,7 +10,10 @@ class PollsList extends Component {
   renderList() {
     return this.props.polls.map((poll) => {
       return (
-        <PollsListItem key={poll._id} poll={poll} />
+        <PollsListItem
+          onPollSelect={this.props.onPollSelect}
+          key={poll._id}
+          poll={poll} />
       )
     })
   }
@@ -25,7 +28,8 @@ class PollsList extends Component {
 }
 
 PollsList.propTypes = {
-  polls: React.PropTypes.array
+  polls: React.PropTypes.array,
+  onPollSelect: React.PropTypes.func
 }
 
 export default PollsList

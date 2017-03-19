@@ -3,7 +3,7 @@ import React from 'react';
 const Header = () => {
 
   return (
-    <h1>Recipe Box!</h1>
+    <h1>FCC Voting Application</h1>
   )
 }
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Header from './header.jsx'
 import PollsList from './polls_list.jsx'
 
 export default class App extends Component {
@@ -8,7 +9,8 @@ export default class App extends Component {
     super(props);
 
     this.state = {
-      polls: []
+      polls: [],
+      selectedPoll: null
     };
   }
 
@@ -25,12 +27,17 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <PollsList polls={this.state.polls} />
+        <Header />
+        <PollsList
+          polls={this.state.polls}
+          onPollSelect={ selectedPoll => this.setState({ selectedPoll })}
+          />
       </div>
     );
   }
 }
 
 App.propTypes = {
-  polls: React.PropTypes.array
+  polls: React.PropTypes.array,
+  selectedPoll: React.PropTypes.object
 }

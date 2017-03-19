@@ -16,7 +16,7 @@ class PollsListItem extends Component {
 
   render() {
     return (
-        <li className="polls-list">
+        <li onClick={() => this.props.onPollSelect(this.props.poll)} className="polls-list">
           <div className="poll-stimulus">{this.props.poll.poll_stimulus}</div>
           <ul className="options-list">{this.renderOptions()}</ul>
         </li>
@@ -25,7 +25,8 @@ class PollsListItem extends Component {
 }
 
 PollsListItem.propTypes = {
-  poll: React.PropTypes.object
+  poll: React.PropTypes.object,
+  onPollSelect: React.PropTypes.func
 }
 
 export default PollsListItem
